@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    display: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    max-width: 1920px;
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 30px;
+    border-bottom: 1px solid rgb(212, 194, 159);
+}
+
+.btnheader {
+    display: none;
+    background-color: rgb(212, 186, 134);
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.btnheader span {
+    transition: all .4s ease-in-out;
+    position: absolute;
+    top: 12.5px;
+    background-color: rgb(66, 66, 66);
+    width: 30px;
+    height: 5px;
+    border-radius: 2px;
+}
+
+.btnheader span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.btnheader span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.btnheader span:nth-child(1).open {
+    transform: rotate(45deg);
+}
+
+.btnheader span:nth-child(2).open {
+    opacity: 0;
+}
+
+.btnheader span:nth-child(3).open {
+    transform: rotate(-45deg);
+}
+
+.logo {
+    width: 90px;
+    height: 60px;
+    animation: scalLogo 2s alternate infinite;
+}
+
+@keyframes scalLogo {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.serchbg {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border: 1px solid rgb(231, 231, 231);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.inputText {
+    font-size: 16px;
+    padding: 4px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.inputText::placeholder {
+    color: rgb(150, 102, 7);
+}
+
+.btnserch {
+    cursor: pointer;
+    padding: 0 5px;
+    background-color: rgb(212, 186, 134);
+    color: #fdfdfd;
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 1px;
+}
+
+.btnserch:hover {
+    transition: all .3s;
+    background-color: rgb(219, 157, 34);
+    color: #ffffff;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+.navigation li a {
+    color: rgb(150, 102, 7);
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navigation li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.linkcart {
+    position: relative;
+}
+
+.count {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background-color: red;
+    color: #ffffff;
+    padding: 0px 4px;
+    border-radius: 10px;
+}
+
+main {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.titleProduct {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.shoping {
+    background-color: rgb(229, 229, 229);
+    color: rgb(117, 38, 38);
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 4px 20px;
+    border-radius: 3px;
+}
+
+.cartEmpty {
+    max-width: 900px;
+    width: 100%;
+}
+
+.shoping:hover {
+    transition: all .4s;
+    background-color: rgb(223, 218, 218);
+    color: #b80909;
+}
+
+.cartsbg {
+    width: 100%;
+    min-height: 300px;
+    max-height: 610px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart {
+    background-color: #ffffff;
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    overflow: auto;
+    padding: 0 10px;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    /*min-height: 130px;*/
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(223, 220, 220);
+}
+
+.imgcard {
+    width: 126px;
+    height: 90px;
+}
+
+.title {
+    color: rgb(58, 58, 96);
+    font-style: italic;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.description {
+    color: rgb(44, 47, 58);
+    font-size: 16px;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    color: rgb(182, 0, 0);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.counts {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    font-size: 14px;
+    border: 1px solid rgb(241, 237, 237);
+    padding: 2px;
+}
+
+.minus, .plus {
+    background-color: rgb(241, 237, 237);
+    cursor: pointer;
+    font-size: 12px;
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minus:hover {
+    transition: all .3s;
+    background-color: #dedddd;
+}
+
+.plus:hover {
+    transition: all .3s;
+    background-color: #dedddd;
+}
+
+.btnDel {
+    margin-left: 66px;
+    cursor: pointer;
+    width: 88px;
+    padding: 3px 4px;
+    background-color: rgb(177, 177, 177);
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+}
+
+.btnDel:hover {
+    transition: all .4s;
+    background-color: rgb(26, 27, 31);
+}
+
+.total {
+    margin-top: 20px;
+    max-width: 1100px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: end;
+    padding: 5px;
+    column-gap: 6px;
+}
+
+.total.active {
+    display: flex;
+}
+
+.totalText {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family: 'Arial', serif;
+    font-weight: 600;
+}
+
+.totalPrice {
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-family: 'Arial', serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 60px;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.copirated {
+    color: #9d9d9d;
+    font-size: 16px;
+    font-family: 'Actor', sans-serif;
+    line-height: 33px;
+}
+
+.navigation-footer {
+    gap: 10px;
+}
+
+.navigation-footer li {
+    list-style: none;
+}
+
+.navigation-footer li a {
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    color: #9d9d9d;
+    font-size: 16px;
+    font-family: 'Actor', sans-serif;
+}
+
+.navigation-footer li a:hover {
+    color: #e4e9f4;
+}
+
+.socSeti {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.socSeti li {
+    list-style: none;
+}
+
+.socSeti img {
+    transition: all .4s ease-in-out;
+    width: 34px;
+    filter: drop-shadow(0 3px 3px rgb(212, 6, 6));
+}
+
+.socSeti img:hover {
+    transform: scale(1.1);
+}
+
+.centerAddres {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 15px;
+}
+
+.centerAddres p {
+    color: #9d9d9d;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    header {
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 713px) {
+    main {
+        margin-top: 140px;
+    }
+}
+
+@media (max-width: 665px) {
+    .textBanner {
+        font-size: 48px;
+    }
+
+    .card {
+        flex-direction: column;
+        width: 280px;
+    }
+
+    .btnDel {
+        margin-left: 0px;
+    }
+
+    .total {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 555px) {
+    footer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .navigation-footer {
+        display: flex;
+    }
+}
+
+@media (max-width: 450px) {
+
+    main {
+        margin-top: 100px;
+    }
+
+    main.open {
+        margin-top: 190px;
+    }
+
+    .btnheader {
+        display: flex;
+    }
+    
+    .serchbg {
+        display: none;
+    }
+
+    .serchbg.open {
+        display: flex;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+}
+
+@media (max-width: 444px) {
+    main {
+        margin-top: 100px;
+    }
+
+    .textBanner {
+        font-size: 34px;
+    }
+}
